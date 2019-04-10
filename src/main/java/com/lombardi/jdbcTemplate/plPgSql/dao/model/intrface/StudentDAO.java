@@ -11,4 +11,6 @@ public interface StudentDAO {
     void registerStudentWithStoredProcedure(Student student);
 
     List<Student> retrieveEngineeringStudentWithView();
+
+    int unregisterStudent(long studentId);
 }

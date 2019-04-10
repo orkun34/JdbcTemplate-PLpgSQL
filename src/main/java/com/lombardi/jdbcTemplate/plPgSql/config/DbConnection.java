@@ -10,6 +10,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
+/**
+ * @author orkun
+ */
+
 @Configuration
 @ComponentScan("com.lombardi.jdbcTemplate.plPgSql")
 @PropertySource("classpath:database.properties")

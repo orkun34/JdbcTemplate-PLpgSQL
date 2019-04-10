@@ -10,6 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
 
+/**
+ * @author orkun
+ */
+
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.lombardi.jdbcTemplate.plPgSql"})
 public class App {

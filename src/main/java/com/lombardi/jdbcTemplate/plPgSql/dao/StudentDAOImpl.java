@@ -9,6 +9,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * @author orkun
+ */
+
 @Component
 public class StudentDAOImpl implements StudentDAO {
 
@@ -30,7 +34,9 @@ public class StudentDAOImpl implements StudentDAO {
         return jdbcTemplate.query("select * from list_engineer", new StudentMapper());
     }
 
-
+    public int unregisterStudent(long studentId) {
+        return jdbcTemplate.update("delete from student where S_ID = ? ",new Object[] {studentId});
+    }
 
 
 }

@@ -5,8 +5,13 @@ import com.lombardi.jdbcTemplate.plPgSql.dao.model.Student;
 import com.lombardi.jdbcTemplate.plPgSql.impl.intrface.IStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+/**
+ * @author orkun
+ */
 
 @Component
 public class StudentImpl implements IStudent {
@@ -24,6 +29,11 @@ public class StudentImpl implements IStudent {
 
     public List<Student> retrieveEngineeringStudentWithView() {
         return studentDAOImpl.retrieveEngineeringStudentWithView();
+    }
+
+    @Transactional
+    public int unregisterStudent(long studentId) {
+        return studentDAOImpl.unregisterStudent(studentId);
     }
 
 
