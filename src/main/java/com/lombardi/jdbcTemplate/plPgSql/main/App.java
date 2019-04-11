@@ -24,13 +24,14 @@ public class App {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(DbConnection.class);
         StudentImpl studentImpl = applicationContext.getBean(StudentImpl.class);
 
-        /*Student student = new Student("Jack",23,"Civil Engineering");
-        studentImpl.registerStudent(student);*/
-        List<Student> studentList = studentImpl.retrieveEngineeringStudentWithView();
-        for (Student s:studentList){
-            System.out.println("Student Name: "+s.getName()+" Student Area: "+s.getStudyArea());
+        /**Student student = new Student("Jack",23,"Civil Engineering");
+         studentImpl.simpleJdbcInsert(student);*/
+        //studentImpl.registerStudent(student);
+        //System.out.println(studentImpl.calculateAvgAgeOfStudentsByArea("Engineering"));
+        List<Student> studentList = studentImpl.retrieveStudentByNameWithQueryObject("Jack");
+        for (Student s : studentList) {
+            System.out.println("Student Name: " + s.getName() + " Student Area: " + s.getStudyArea()+"Student Age: "+s.getAge());
         }
-
 
 
     }

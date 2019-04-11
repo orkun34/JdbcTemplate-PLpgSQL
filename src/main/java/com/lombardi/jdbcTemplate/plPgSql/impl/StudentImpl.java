@@ -19,16 +19,31 @@ public class StudentImpl implements IStudent {
     @Autowired
     StudentDAOImpl studentDAOImpl;
 
+    @Transactional
+    public void simpleJdbcInsert(Student student){
+        studentDAOImpl.simpleJdbcInsert(student);
+    }
+
+    @Transactional
     public void registerStudent(Student student) {
         studentDAOImpl.registerStudent(student);
     }
 
+    @Transactional
     public void registerStudentWithStoredProcedure(Student student) {
         studentDAOImpl.registerStudentWithStoredProcedure(student);
     }
 
     public List<Student> retrieveEngineeringStudentWithView() {
         return studentDAOImpl.retrieveEngineeringStudentWithView();
+    }
+
+    public List<Student> retrieveStudentByNameWithQueryObject(String name) {
+        return studentDAOImpl.retrieveStudentByNameWithQueryObject(name);
+    }
+
+    public double calculateAvgAgeOfStudentsByArea(String studyArea) {
+        return studentDAOImpl.calculateAvgAgeOfStudentsByArea(studyArea);
     }
 
     @Transactional
