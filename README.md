@@ -8,4 +8,4 @@ This application covers basic concept of Spring JdbcTemplate with Postgres DB
 - PL pg/SQL (scripts)
 - Lombok
 
-scripts is under /db folder
+scripts are under /db folder
